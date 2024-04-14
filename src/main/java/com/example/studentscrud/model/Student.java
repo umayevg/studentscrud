@@ -1,11 +1,16 @@
 package com.example.studentscrud.model;
 
-import lombok.Builder;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import lombok.Data;
 
 @Data
-@Builder
+@Entity
 public class Student {
+	@Id
+	@GeneratedValue
+	private Long id;
 	private String firstName;
 	private String lastName;
 	private String birthDate;

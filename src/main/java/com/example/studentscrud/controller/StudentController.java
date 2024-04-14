@@ -31,8 +31,10 @@ public class StudentController {
 	}
 
 	@PostMapping("save_student")
-	public Student saveStudent(@RequestBody Student student) {
-		return service.saveStudent(student);
+	public String saveStudent(@RequestBody Student student) {
+		service.saveStudent(student);
+
+		return "Student successfully saved";
 	}
 
 	@GetMapping("/{email}")
@@ -41,7 +43,7 @@ public class StudentController {
 	}
 
 	@PutMapping("update_student")
-	public Student updateStudent(Student student) {
+	public Student updateStudent(@RequestBody Student student) {
 		return service.updateStudent(student);
 	}
 
